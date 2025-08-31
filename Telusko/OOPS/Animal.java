@@ -3,6 +3,8 @@ public class Animal {
         Dog dog = new Dog("Buddy", 3, "Golden Retriever");
         dog.eat(); // Inherited method from Animal class
         dog.bark(); // Method from Dog class
+        dog.run(); // Method from Dog class
+
     }
 }
 
@@ -17,6 +19,11 @@ class Animals {
 
     public void eat() {
         System.out.println(name + " is eating");
+        System.out.println(getClass().getSimpleName() + " class anme");
+    }
+
+    public void run() {
+        System.out.println(name + " is runing");
     }
 }
 
@@ -31,4 +38,12 @@ class Dog extends Animals {
     public void bark() {
         System.out.println(name + " is barking");
     }
+
+    @Override
+    public void run() {
+        System.out.println(name + " is runing fast");
+        System.out.println(getClass().getSimpleName() + " class anme");
+
+    }
+
 }
